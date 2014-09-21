@@ -1,6 +1,6 @@
 Fast logsumexp
 ==============
-*Fast Logsumexp function available from Python*
+*Fast [log-sum-exp](http://machineintelligence.tumblr.com/post/4998477107/the-log-sum-exp-trick) function in Python*
 
 This code is about 2.5x faster than alternative scipy/numpy/cython/numexpr implementations. It's fast because of explicit use of SSE vectorized intrinsics.
 
