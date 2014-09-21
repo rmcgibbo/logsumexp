@@ -1,17 +1,19 @@
 Fast logsumexp
 ==============
+*Fast Logsumexp function available from Python*
 
-This code is explicitly vectorized, and is about 2.5x faster than alternative scipy/numpy/cython/numexpr implementations.
+This code is about 2.5x faster than alternative scipy/numpy/cython/numexpr implementations. It's fast because of explicit use of SSE vectorized intrinsics.
 
-License (BSD)
-==============
-Copyright (c) 2013, Robert McGibbon and Stanford University
-All rights reserved.
+[See the example IPython notebook](http://nbviewer.ipython.org/github/rmcgibbo/logsumexp/blob/master/Accelerating%20log-sum-exp.ipynb)
 
-Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+Installation
+------------
+$ python setup.py install
 
-1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
-
-2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+Usage
+-----
+```
+import sselogsumexp
+x = np.random.randn(100)
+sselogsumexp.logsumexp(x)
+```
