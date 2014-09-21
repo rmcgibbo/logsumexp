@@ -8,7 +8,9 @@ This code is about 2.5x faster than alternative scipy/numpy/cython/numexpr imple
 
 Installation
 ------------
+```
 $ python setup.py install
+```
 
 Usage
 -----
