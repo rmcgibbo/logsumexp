@@ -3,10 +3,10 @@ from distutils.extension import Extension
 import numpy as np
 
 try:
-    from Cython.Distutils import build_ext
+    from Cython.Distutils.build_ext import build_ext
     src = ['sselogsumexp.pyx', 'src/logsumexp.c']
 except ImportError:
-    from distutils.command import build_ext
+    from distutils.command.build_ext import build_ext
     src = ['sselogsumexp.c', 'src/logsumexp.c']
 
 ext = Extension("sselogsumexp", src,
